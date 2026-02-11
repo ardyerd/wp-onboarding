@@ -6,6 +6,9 @@
  * Author: Ardy - MadeIndonesia
  */
 
+require_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/rest-api.php';
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
