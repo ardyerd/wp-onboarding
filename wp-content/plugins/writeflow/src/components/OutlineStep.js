@@ -35,7 +35,7 @@ const OutlineStep = ( { onNext, onBack } ) => {
             />
             <Button variant="secondary" onClick={onBack} style={{ marginRight: '8px' }}>← Back to Ideas</Button>
             <Button variant="secondary" onClick={generateOutline} disabled={isLoading} style={{ marginRight: '8px' }}>
-                { isLoading ? <Spinner /> : 'Generate Outline' }
+                { isLoading ? <Spinner /> : '[AI] Generate Outline' }
             </Button>
             <Button variant="primary" onClick={onNext}>Start Drafting →</Button>
         </>
