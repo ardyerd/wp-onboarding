@@ -1,10 +1,28 @@
-import { TextareaControl, Button } from "@wordpress/components";
+import { TextareaControl, Button, Spinner } from "@wordpress/components";
 import { useDispatch, useSelect } from "@wordpress/data";
+import apiFetch from "@wordpress/api-fetch";
+import { useState } from "@wordpress/element";
 
 const OutlineStep = ( { onNext, onBack } ) => {
     const meta = useSelect( ( select ) => select( 'core/editor' ).getEditedPostAttribute( 'meta' ) );
 
     const { editPost } = useDispatch( 'core/editor' );
+    const [ isLoading, setIsLoading ] = useState( false );
+
+    const generateOutline = async () => {
+        setIsLoading( true );
+        
+        const response = await apiFetch( {
+            path: '/wp/v1/writeflow/generate-outline',
+            method: 'POST',
+            data: {
+                idea: meta._writeflow_idea,
+            },
+        } );
+
+        editPost( { meta: { ...meta, _writeflow_outline: response.outline } } );
+        setIsLoading( false );
+    };        
 
     return (
         <>
@@ -16,6 +34,9 @@ const OutlineStep = ( { onNext, onBack } ) => {
                 }
             />
             <Button variant="secondary" onClick={onBack} style={{ marginRight: '8px' }}>← Back to Ideas</Button>
+            <Button variant="secondary" onClick={generateOutline} disabled={isLoading} style={{ marginRight: '8px' }}>
+                { isLoading ? <Spinner /> : 'Generate Outline' }
+            </Button>
             <Button variant="primary" onClick={onNext}>Start Drafting →</Button>
         </>
     );
