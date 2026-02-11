@@ -29,7 +29,7 @@ function writeflow_enqueue_assets() {
     wp_enqueue_script( 
         'writeflow-editor', 
         plugins_url('build/index.js', __FILE__), 
-        ['wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data'],
+        ['wp-plugins', 'wp-editor', 'wp-element', 'wp-components', 'wp-data'],
         filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' ) 
     );
 }

@@ -3,6 +3,7 @@
 /wp-includes/
 # Ignore all files in the wp-content directory
 /wp-content/uploads/
+/wp-content/plugins/writeflow/node_modules/
 # Except these files and directories
 !/wp-content/index.php
 

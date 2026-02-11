@@ -1,8 +1,6 @@
 import { registerPlugin } from '@wordpress/plugins';
-import { PluginSidebar } from '@wordpress/edit-post';
-import { PanelBody } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-import { Sidebar } from './sidebar';
+import { PluginSidebar } from '@wordpress/editor';
+import Sidebar from './sidebar';
 
 registerPlugin( 'writeflow-sidebar', {
     render: () => (

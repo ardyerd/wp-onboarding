@@ -14,3 +14,4 @@ const DraftStep = ( { onNext, onBack } ) => {
         </>
     );
 };
+export default DraftStep;
