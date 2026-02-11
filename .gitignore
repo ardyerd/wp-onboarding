@@ -1,0 +1,15 @@
+# Wordpress core
+/wp-admin/
+/wp-includes/
+# Ignore all files in the wp-content directory
+/wp-content/uploads/
+# Except these files and directories
+!/wp-content/index.php
+
+# Cache and logs
+/wp-content/cache/
+/wp-content/debug.log
+
+# Debug log files
+error_log
+.DS_Store
