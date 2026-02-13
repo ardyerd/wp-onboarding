@@ -3,7 +3,10 @@
 /wp-includes/
 # Ignore all files in the wp-content directory
 /wp-content/uploads/
+/wp-content/plugin/jetpack/
 /wp-content/plugins/writeflow/node_modules/
+/wp-content/plugins/woocommerce/
+/wp-content/plugins/wc-smooth-generator/
 # Except these files and directories
 !/wp-content/index.php
 
